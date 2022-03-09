@@ -27,7 +27,7 @@ app$callback(
     output('plot-area', 'figure'),
     list(input('col-select', 'value')),
     function(xcol) {
-        filtered_df <- data |> filter(Sex == xcol)
+        filtered_df <- data %>% filter(Sex == xcol)
         p <- ggplot(filtered_df) +
             aes(x = Age) +
             geom_histogram(fill = 'lightblue', color = 'black') +
